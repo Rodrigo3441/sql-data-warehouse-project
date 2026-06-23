@@ -2,6 +2,25 @@
 
 This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights. Designed as a portifolio project, it highlights industry best practices in data engineering and analytics.
 
+## 📑 Table of Contents
+
+- [Project Overview](#-project-overview)
+- [Project Requirements](#-project-requirements)
+- [Data Sources](#-data-sources)
+- [Project Architecture](#-project-architecture)
+- [ETL Process](#-etl-process)
+- [Data Model](#-data-model)
+- [Repository Structure](#-repository-structure)
+- [How to Run](#-how-to-run)
+- [License](#-license)
+
+## Project Overview
+
+This project demonstrates the end-to-end development of a modern SQL Data Warehouse following industry-standard data engineering practices. The goal is to transform raw data from multiple source systems into a structured, analytics-ready environment that supports business intelligence, reporting, and decision-making.
+
+The solution is built using the **Medallion Architecture**, which organizes data into progressive layers of refinement, ensuring data quality, maintainability, and scalability.
+
+
 -----------------------
 
 ## 🚀 Project Requirements
@@ -32,6 +51,101 @@ These insights empower stakeholders with key business metrics, enabling strategi
 
 -----------------------
 
+## Project Architecture
+
+The data architecture of this project follows the Medallion Architecture **Bronze, Silver and Gold** layers:
+
+![alt text](docs/data_architecture/data_architecture.png)
+
+1. **Bronze Layer**: Stores raw data ingested from source systems with minimal modifications.
+2. **Silver Layer**: Cleanses, standardizes, and transforms raw data into a consistent and reliable format.
+3. **Gold Layer**: Provides business-ready data models optimized for reporting, analytics, and decision-making.
+-----------------------
+
+## 💽 Data Sources
+
+This project integrates data from two business systems:
+
+1. **CRM (Customer Relationship Management):**
+   Contains customer-related information, including customer details, such as country.
+
+2. **ERP (Enterprise Resource Planning):**
+   Contains operational and business data such as products, orders, and financial transactions.
+
+These datasets are combined and transformed within the data warehouse to provide a unified view for reporting and analytics.
+
+## ETL Process
+
+During the process the data goes through different processes in order to be prepared before going to the next layer. Here it is an overview about these processes between different layers
+
+![alt text](docs/etl_process/etl_process.png)
+
+| Layer Phase      | Process Involved | Description |
+|------------------|------------------|-------------|
+| Source -> Bronze | Extract and Load | Data is extracted from source systems and loaded as-is. |
+| Bronze -> Silver | Extract, Transform and Load | Data is extracted from the Bronze layer. It is cleansed, standardized, and transformed to improve data quality. |
+| Silver -> Gold | Extract and Load | Data is extracted from the Silver layer. Modeled into fact and dimension tables following a star schema. |
+
+
+-----------------------
+
+## ⭐ Data Model
+
+The Gold layer is designed using a **Star Schema** to support analytics and reporting.
+
+The model consists of:
+- **Fact Table (`gold.fact_sales`):** store information about transactions business measures.
+- **Dimension Tables (`gold.dim_customers`, `gold.dim_products`):** store descriptive information that provide context for sales analysis. 
+
+This design improves query performance, reporting speed, and makes analysis across customers more efficient.
+
+![alt text](docs/star_schema/star_schema.png)
+
+## Technologies Used
+
+- Microsoft SQL Server
+- T-SQL
+- Git
+- GitHub
+- Draw.io
+- Visual Studio Code
+
+## Repository Structure
+
+```text
+sql-data-warehouse-project/
+│
+├── archive/                     # Archived files and previous project versions
+├── datasets/                    # Source datasets used in the ETL process
+│
+├── docs/                        # Project documentation
+│   ├── data_architecture/       # Data warehouse architecture diagrams and notes
+│   ├── data_flow/               # Data flow documentation
+│   ├── integration_model/       # Source-to-target integration models
+│   ├── star_schema/             # Star schema designs and documentation
+│   ├── data_catalog.md          # Data dictionary and metadata documentation
+│   └── naming_conventions.md    # Naming standards used throughout the project
+│
+├── scripts/                     # SQL scripts organized by warehouse layers
+│   ├── bronze/                  # Raw data ingestion and loading scripts
+│   ├── silver/                  # Data cleansing and transformation scripts
+│   ├── gold/                    # Business-ready data models and aggregations
+│   └── init_database.sql        # Database initialization script
+│
+├── tests/                       # Data validation and testing scripts
+│
+├── .gitignore                   # Git ignored files and folders
+├── LICENSE                      # Project license
+└── README.md                    # Project overview and documentation
+```
+
+
+-----------------------
 ## 🛡️ License
 
 This project is licensed under the [MIT License](LICENSE). You are free to use, modify, and share this project with proper attribution.
+
+-----------------------
+## 👨‍💻 About Me
+
+Hi! i'm Rodrigo, a data engineer student that is learning new things every day.
