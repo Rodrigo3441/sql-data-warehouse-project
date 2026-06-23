@@ -86,7 +86,7 @@ During the process the data goes through different processes in order to be prep
 | Layer Phase      | Process Involved | Description |
 |------------------|------------------|-------------|
 | Source -> Bronze | Extract and Load | Data is extracted from source systems and loaded as-is. |
-| Bronze -> Silver | Extract, Transform and Load | Data is extracted from the Bronze layer. It is cleansed, standardized, and transformed to improve data quality. |
+| Bronze -> Silver | Extract, Transform and Load | Data is extracted from the Bronze layer. It is cleansed, standardized, and transformed to improve data quality, and then loaded into the Silver layer. |
 | Silver -> Gold | Extract and Load | Data is extracted from the Silver layer. Modeled into fact and dimension tables following a star schema. |
 
 
