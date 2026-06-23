@@ -4,15 +4,18 @@ This project demonstrates a comprehensive data warehousing and analytics solutio
 
 ## 📑 Table of Contents
 
-- [Project Overview](#-project-overview)
+- [Project Overview](#project-overview)
 - [Project Requirements](#-project-requirements)
 - [Data Sources](#-data-sources)
-- [Project Architecture](#-project-architecture)
-- [ETL Process](#-etl-process)
+- [Project Architecture](#project-architecture)
+- [ETL Process](#etl-process)
 - [Data Model](#-data-model)
-- [Repository Structure](#-repository-structure)
+- [Repository Structure](#repository-structure)
 - [How to Run](#-how-to-run)
-- [License](#-license)
+- [License](#license)
+- [About Me](#-about-me)
+
+-----------------------
 
 ## Project Overview
 
@@ -141,7 +144,7 @@ sql-data-warehouse-project/
 
 
 -----------------------
-## 🛡️ License
+## License
 
 This project is licensed under the [MIT License](LICENSE). You are free to use, modify, and share this project with proper attribution.
 
