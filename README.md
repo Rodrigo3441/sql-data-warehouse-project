@@ -124,6 +124,7 @@ sql-data-warehouse-project/
 ├── docs/                        # Project documentation
 │   ├── data_architecture/       # Data warehouse architecture diagrams and notes
 │   ├── data_flow/               # Data flow documentation
+│   ├── etl_process/             # ETL processes documentation
 │   ├── integration_model/       # Source-to-target integration models
 │   ├── star_schema/             # Star schema designs and documentation
 │   ├── data_catalog.md          # Data dictionary and metadata documentation
