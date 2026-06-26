@@ -131,6 +131,7 @@ sql-data-warehouse-project/
 │   └── naming_conventions.md    # Naming standards used throughout the project
 │
 ├── scripts/                     # SQL scripts organized by warehouse layers
+│   ├── analytics/               # SQL Queries for reporting and business questions
 │   ├── bronze/                  # Raw data ingestion and loading scripts
 │   ├── silver/                  # Data cleansing and transformation scripts
 │   ├── gold/                    # Business-ready data models and aggregations
