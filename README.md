@@ -132,6 +132,7 @@ sql-data-warehouse-project/
 │
 ├── scripts/                     # SQL scripts organized by warehouse layers
 │   ├── analytics/               # SQL Queries for reporting and business questions
+│   │   └── reports/             # SQL analytical views about products and customers
 │   ├── bronze/                  # Raw data ingestion and loading scripts
 │   ├── silver/                  # Data cleansing and transformation scripts
 │   ├── gold/                    # Business-ready data models and aggregations
